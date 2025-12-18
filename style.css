@@ -1,0 +1,214 @@
+/* ---------- GLOBAL ---------- */
+* {
+  font-family: "Inter", system-ui, -apple-system, Arial;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f6fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* ---------- CARD ---------- */
+.container {
+  background: white;
+  padding: 28px;
+  width: 480px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+/* ---------- TITLE ---------- */
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- INPUTS ---------- */
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 160px 70px;
+  gap: 10px;
+}
+
+input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  outline: none;
+}
+
+input:focus {
+  border-color: #333;
+}
+
+/* ---------- ADD BUTTON ---------- */
+#addTaskBtn {
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: white;
+  cursor: pointer;
+  transition: .2s;
+}
+
+#addTaskBtn:hover {
+  background: #333;
+  color: white;
+}
+
+/* ---------- FILTERS ---------- */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 8px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #efefef;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: #333;
+  color: white;
+}
+
+/* ---------- TASK LIST ---------- */
+ul {
+  list-style: none;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 26px 1fr 24px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------- CHECKBOX ---------- */
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* ---------- TASK TEXT ---------- */
+li span {
+  font-size: 15px;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* ---------- DUE DATE ---------- */
+small {
+  color: #888;
+  font-size: 0.8em;
+  margin-left: 6px;
+}
+
+/* ---------- DELETE BUTTON ---------- */
+.delete-btn {
+  color: #ff5b5b;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .2s;
+}
+
+.delete-btn:hover {
+  color: #d13232;
+}
+
+/* ---------- LOGOUT ---------- */
+#appBox {
+  position: relative;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #e15656;
+}
+
+/* ---------- EXPORT BUTTONS ---------- */
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.export-buttons button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.export-buttons button:hover {
+  background: #333;
+  color: white;
+}
+
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .container {
+    width: 94%;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .input-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #addTaskBtn {
+    grid-column: span 2;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  li {
+    grid-template-columns: 22px 1fr 22px;
+  }
+
+  .logout-btn {
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+  }
+}
